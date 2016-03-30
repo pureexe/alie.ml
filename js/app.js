@@ -5,7 +5,7 @@ $(document).ready(function(){
       if (response.authResponse) {
         FB.api('/me?fields=email,name,first_name,last_name', function(response) {
           date = (new Date()).toISOString();
-          $.post(apiServer+"/Player", {
+          $.post(apiServer+"/Players", {
             id: response.id,
             name: response.name,
             firstname: response.first_name,
