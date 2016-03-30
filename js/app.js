@@ -1,11 +1,21 @@
+var apiServer = "http://api.alie.ml"
 $(document).ready(function(){
   $("#login-btn").click(function(){
     FB.login(function(response) {
       if (response.authResponse) {
-        console.log('Welcome!  Fetching your information.... ');
-        FB.api('/me', function(response) {
-          console.log('Good to see you, ' + response.name + '.');
-          console.log(response);
+        FB.api('/me?fields=email,name,first_name,last_name', function(response) {
+          date = (new Date()).toISOString()
+          $.post(apiServer+"/Player", {
+            id: response.id,
+            name: response.name,
+            firstname: response.first_name,
+            last_name:response.last_name,
+            updated_time:date
+          },.done(function() {
+              //new user give some tutorial
+          }).fail(function() {
+              //skip tutorial
+          }));
         });
       } else {
         console.log('User cancelled login or did not fully authorize.');
