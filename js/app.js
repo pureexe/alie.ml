@@ -11,11 +11,11 @@ $(document).ready(function(){
             firstname: response.first_name,
             last_name:response.last_name,
             updated_time:date
-          },.done(function() {
+          }).done(function() {
               //new user give some tutorial
           }).fail(function() {
               //skip tutorial
-          }));
+          });
         });
       } else {
         console.log('User cancelled login or did not fully authorize.');
