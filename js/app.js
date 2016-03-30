@@ -4,7 +4,7 @@ $(document).ready(function(){
     FB.login(function(response) {
       if (response.authResponse) {
         FB.api('/me?fields=email,name,first_name,last_name', function(response) {
-          date = (new Date()).toISOString()
+          date = (new Date()).toISOString();
           $.post(apiServer+"/Player", {
             id: response.id,
             name: response.name,
@@ -25,11 +25,11 @@ $(document).ready(function(){
   $("html").on("fbLoaded",function(){
     FB.getLoginStatus(function(response) {
       if (response.status === 'connected') {
-        console.log("logedin?")
+        console.log("logedin?");
       }
       else {
         $("#login-page").show();
-        console.log("triggered")
+        console.log("triggered");
       }
     });
   });
