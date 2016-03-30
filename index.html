@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/main.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8"/>
+  </head>
+  <body class="grey lighten-5">
+    <header>
+    </header>
+    <main>
+      <div id="login-page" style="visibility: hidden;">
+        <div class="green  valign-wrapper" style="min-width:100vw;min-height:80vh">
+          <div class="valign center" style="width:100vw">
+            <h1 class="white-text" style="font-size:5rem;">A LIE</h1>
+            <h2 class="white-text" style="font-size:2rem;">ขอหนึ่งวัน... ให้ฉันโกหกเธอ</h2>
+            <a class="btn btn-large blue darken-2 waves-effect waves-light">sign in with facebook</a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+    </footer>
+    <script type="text/javascript" src="js/jquery-2.2.2.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1706843969563680',
+          xfbml      : true,
+          version    : 'v2.5'
+        });
+        $("html").trigger("fbLoaded");
+      };
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+  </body>
+</html>
