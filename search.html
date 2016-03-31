@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/main.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8"/>
+  </head>
+  <body class="grey lighten-5">
+    <header>
+      <nav class="green">
+        <div class="nav-wrapper">
+          <a href="thread.html" class="brand-logo" style="left: 0%;-webkit-transform: translateX(0%);transform: translateX(0%);">A-LIE</a>
+          <ul id="nav-mobile" class="right">
+            <li ><a href="thread.html"><i class="material-icons">perm_contact_calendar</i></a></li>
+            <li class="active"><a href="#"><i class="material-icons">search</i></a></li>
+            <li><a class="dropdown-button" data-activates='ex-top-menu' href="#"><i class="material-icons">more_vert</i></a></li>
+          </ul>
+        </div>
+        <ul id='ex-top-menu' class='dropdown-content'>
+         <li><a target="_blank" href="https://www.pureapp.in.th/2016/03/how-to-use-alie/">วิธีการใช้งาน</a></li>
+         <li><a target="_blank" href="https://www.facebook.com/appmadebypure/" href="#!" https://>แฟนเพจ</a></li>
+         <li class="divider"></li>
+         <li><a href="#!" id="btn-logout">ออกจากระบบ</a></li>
+       </ul>
+     </nav>
+    </header>
+    <main>
+      <div style="position:relative;">
+        <div class="green lighten-2" style="height:35vh;widht:100vh"></div>
+        <div style="height: calc(100vh - 100px);top:10px;bottom:10px;position:absolute;width:100%;">
+          <div class="container" style="height:100%;">
+            <div class="card" style="height:100%;">
+              <div class="grey lighten-3" style="width:100%;padding-left:20px;padding-right:20px;padding-top:10px;">
+                <input placeholder="ค้นหาบุคคล" id="search-input" type="text" class="validate" style="width:100%;">
+              </div>
+              <div style="width:100%;height: calc(100% - 71px);">
+                <div class="row" id="search-render" style="padding-left:10px;padding-right:10px;">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+    </footer>
+    <script type="text/javascript" src="js/jquery-2.2.2.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/fbinit.js"></script>
+    <script type="text/javascript" src="js/navbar.js"></script>
+    <script type="text/javascript" src="js/search.js"></script>
+  </body>
+</html>

@@ -11,20 +11,112 @@
     <header>
       <nav class="green">
        <div class="nav-wrapper">
-         <a href="#" class="brand-logo" style="left: 0%;-webkit-transform: translateX(0%);transform: translateX(0%);">A-LIE</a>
-         <ul id="nav-mobile" class="right hide-on-med-and-down">
-           <li><a href="sass.html">Sass</a></li>
-           <li><a href="badges.html">Components</a></li>
-           <li><a href="collapsible.html">JavaScript</a></li>
+         <a href="thread.html" class="brand-logo" style="left: 0%;-webkit-transform: translateX(0%);transform: translateX(0%);">A-LIE</a>
+         <ul id="nav-mobile" class="right">
+           <li><a href="thread.html"><i class="material-icons">perm_contact_calendar</i></a></li>
+           <li><a href="#"><i class="material-icons">search</i></a></li>
+           <li><a class="dropdown-button" data-activates='ex-top-menu' href="#"><i class="material-icons">more_vert</i></a></li>
          </ul>
        </div>
+       <ul id='ex-top-menu' class='dropdown-content'>
+        <li><a target="_blank" href="https://www.pureapp.in.th/2016/03/how-to-use-alie/">วิธีการใช้งาน</a></li>
+        <li><a target="_blank" href="https://www.facebook.com/appmadebypure/" href="#!" https://>แฟนเพจ</a></li>
+        <li class="divider"></li>
+        <li><a href="#!" id="btn-logout">ออกจากระบบ</a></li>
+      </ul>
      </nav>
     </header>
     <main>
+      <div style="position:relative;">
+        <div class="green lighten-2" style="height:35vh;widht:100vh"></div>
+        <div style="height: calc(100vh - 100px);top:10px;bottom:10px;position:absolute;width:100%;">
+          <div class="container" style="height:100%;">
+            <div class="card" style="height:100%;position:relative;">
+              <div class="grey lighten-3" style="width:100%;padding:20px;">
+                <h2 style="margin: 0;font-size: 2rem;" id="thread-name"></h2>
+              </div>
+              <a id="show-who" class="btn-floating btn-large waves-effect waves-light red" style="position:absolute;right:10px;top:40px;display:none;"><i class="material-icons">face</i></a>
+              <div id="chat-display-container" style="width:100%;top:73px;height: calc(100% - 144px);overflow:auto;">
+                <div id="chat-display" style="width:100%;height:100%;display:none;">
+                </div>
+                <div id="preloader" class="center valign-wrapper" style="width:100%;height:100%;">
+                  <div class="valign" style="width:100%;">
+                    <div class="preloader-wrapper active">
+                      <div class="spinner-layer spinner-blue">
+                        <div class="circle-clipper left">
+                          <div class="circle"></div>
+                        </div><div class="gap-patch">
+                          <div class="circle"></div>
+                        </div><div class="circle-clipper right">
+                          <div class="circle"></div>
+                        </div>
+                      </div>
+                      <div class="spinner-layer spinner-red">
+                        <div class="circle-clipper left">
+                          <div class="circle"></div>
+                        </div><div class="gap-patch">
+                          <div class="circle"></div>
+                        </div><div class="circle-clipper right">
+                          <div class="circle"></div>
+                        </div>
+                      </div>
+
+                      <div class="spinner-layer spinner-yellow">
+                        <div class="circle-clipper left">
+                          <div class="circle"></div>
+                        </div><div class="gap-patch">
+                          <div class="circle"></div>
+                        </div><div class="circle-clipper right">
+                          <div class="circle"></div>
+                        </div>
+                      </div>
+
+                      <div class="spinner-layer spinner-green">
+                        <div class="circle-clipper left">
+                          <div class="circle"></div>
+                        </div><div class="gap-patch">
+                          <div class="circle"></div>
+                        </div><div class="circle-clipper right">
+                          <div class="circle"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grey lighten-3" style="width:100%;padding-left:20px;padding-right:20px;padding-top:10px;position:absolute;bottom:0px;">
+                <input placeholder="พิมพ์ข้อความ" id="input-message" type="text" class="validate" style="width:calc(100% - 100px)"><a class="btn waves-effect waves-light" style="margin-left:20px;" id="send-msg"><i class="material-icons">send</i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="new-thread-modal" class="modal">
+       <div class="modal-content">
+         <h4>กรุณาตั้งนามแฝง</h4>
+         <div class="width:100%;"><input placeholder="ตั้งนามแฝง" id="new-thread-name" type="text" class="validate" style="width:100%;"></div>
+       </div>
+       <div class="modal-footer">
+         <a id="setname-btn" href="#!" class="waves-effect waves-green btn">ตกลง</a>
+       </div>
+     </div>
+     <div id="show-who-modal" class="modal">
+      <div class="modal-content">
+        <h4>เปิดเผยตัวตน</h4>
+        <p>เปิดเผยตัวตนของคุณให้อีกฝ่ายทราบ... การกระทำนี้ไม่สามารถย้อนกลับได้</p>
+      </div>
+      <div class="modal-footer">
+        <a id="show-who-btn" href="#!" class="waves-effect waves-green btn-flat">ตกลง</a>
+        <a href="#!" class="waves-effect waves-green btn-flat modal-action modal-close ">ยกเลิก</a>
+      </div>
+    </div>
     </main>
     <footer>
     </footer>
     <script type="text/javascript" src="js/jquery-2.2.2.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/fbinit.js"></script>
+    <script type="text/javascript" src="js/navbar.js"></script>
+    <script type="text/javascript" src="js/chat.js"></script>
   </body>
 </html>

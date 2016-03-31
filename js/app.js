@@ -1,20 +1,24 @@
-var apiServer = "http://api.alie.ml"
+var apiServer = "https://api.alie.ml"
 $(document).ready(function(){
   $("#login-btn").click(function(){
     FB.login(function(response) {
       if (response.authResponse) {
         FB.api('/me?fields=email,name,first_name,last_name', function(response) {
+          localStorage.player = response.id
           date = (new Date()).toISOString();
           $.post(apiServer+"/Players", {
             id: response.id,
             name: response.name,
             firstname: response.first_name,
-            last_name:response.last_name,
+            lastname:response.last_name,
+            email:response.email,
             updated_time:date
           }).done(function() {
-              //new user give some tutorial
+            localStorage.player = response.id
+            window.location="thread.html";
           }).fail(function() {
-              //skip tutorial
+            localStorage.player = response.id
+            window.location="thread.html";
           });
         });
       } else {
