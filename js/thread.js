@@ -1,5 +1,8 @@
 var apiServer = "https://api.alie.ml"
 var me = localStorage.player;
+if(!me){
+  window.location="index.html";
+}
 var getNameFromId = function(id,callback){
   $.getJSON(apiServer+"/Players/"+id+"?filter[fields][name]=true",function(result){
     callback(result.name);
