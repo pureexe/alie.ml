@@ -146,15 +146,16 @@ $("#setname-btn").click(function(){
       "name":name,
       "unread_count":0
     }, function(res){
-      $.getJSON(apiServer+"/Players/"+chatwith+"?filter[fields][name]=true",function(res){
-        thread_name = res.name;
-        $("#thread-name").text(thread_name);
+        getNameFromId(res.to,function(name){
+          $("#thread-name").text(name);
+          thread_name = name;
+        })
+        thread_id = res.id;
         $("#preloader").hide();
         $("#chat-display").show();
         setInterval(updatedThread,2000);
         var d = $('#chat-display-container');
         d.scrollTop(d.prop("scrollHeight"));
-      });
       $("#new-thread-modal").closeModal();
     }, 'json').fail(function(){
       Materialize.toast('ไม่สามารถเชื่อมต่อกับเซิฟเวอร์ได้', 4000);
