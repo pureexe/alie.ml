@@ -6,7 +6,7 @@ if(!me){
 var searchRender = function(data){
   var output = "";
   if(data.length==0){
-    output = "<div style='width:100%;' class='center'><span>ไม่พบรายชื่อที่ค้นหา</span>";
+    output = "<div class='col s12 valign-wrapper' style='width:100%;height:100%;'><div class='valign center' style='width:100%;'><div><a class='btn-floating btn-large waves-effect waves-light red'><i class='material-icons'>priority_high</i></a></div><div><p>ไม่พบผลการค้นหาที่ต้องการ<br/>โปรดลองชวนคนที่ต้องการคุยด้วยมาเล่นแอปนี้</p></div></div></div>";
   }else {
     data.forEach(function(r){
       output+="<div class='col l4 m6 s12 waves-effect waves-light''><a href='chat.html?with="+r.id+"'><div class='card light-green lighten-4'><div style='padding:10px;'><div class='row' style='margin:0px;'><div class='col s3'><img src='https://graph.facebook.com/"+r.id+"/picture' class='circle responsive-img' /></div><div class='col s9'><span style='font-size: 1.1rem;'>"+r.name+"</span></div></div></div></div></a></div>";

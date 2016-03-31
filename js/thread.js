@@ -39,9 +39,20 @@ var genThreadList = function(data){
   }
   genlist(data.shift());
 }
+var NothingToShow = function(){
+  out = "";
+  out = "<div style='width:100%;height:100%;' class='valign-wrapper'><div style='width:100%;' class='valign center'><div><a class='btn-floating btn-large waves-effect waves-light red' href='https://www.pureapp.in.th/2016/03/how-to-use-alie/' target='_blank'><i class='material-icons'>help_outline</i></a></div><div><p style='font-size:1.1rem;'>ไม่พบรายชื่อผู้ติดต่อ<br/><a target='blank' href='https://www.pureapp.in.th/2016/03/how-to-use-alie/'>คลิกที่นี่</a> เพื่อดูวิธีการใช้งาน</p></div></div></div>";
+  $("#preloader").hide();
+  $("#thread-list").html(out);
+  $("#thread-list").show();
+}
 $(document).ready(function(){
   $.getJSON(apiServer+"/Threads?filter[where][or][0][from]="+me+"&filter[where][or][1][to]="+me+"&filter[order]=updated_time DESC",function(res){
-    genThreadList(res);
+    if(res.length>0){
+      genThreadList(res);
+    }else{
+      NothingToShow();
+    }
   }).fail(function(){
     Materialize.toast('ไม่สามารถเชื่อมต่อกับเซิฟเวอร์ได้', 4000);
   });
