@@ -21,7 +21,7 @@ $(document).ready(function(){
               localStorage.player = response.id
               window.location="thread.html";
             });
-          catch(e){
+          }catch(e){
             // do nothing
           }
         });
