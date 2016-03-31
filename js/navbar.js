@@ -10,8 +10,15 @@ $(document).ready(function(){
       }
   );
   $("#btn-logout").click(function(){
-    FB.logout();
     localStorage.clear();
-    window.localtion = "index.html"
+    FB.getLoginStatus(function(response) {
+      if (response.status === 'connected') {
+        FB.logout(function(response) {
+          window.localtion = "index.html"
+        });
+      }else{
+        window.localtion = "index.html"
+      }
+   });
   })
 });
