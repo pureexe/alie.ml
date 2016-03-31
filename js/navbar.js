@@ -11,14 +11,6 @@ $(document).ready(function(){
   );
   $("#btn-logout").click(function(){
     localStorage.clear();
-    FB.getLoginStatus(function(response) {
-      if (response.status === 'connected') {
-        FB.logout(function(response) {
-          window.localtion = "index.html"
-        });
-      }else{
-        window.localtion = "index.html"
-      }
-   });
-  })
+    window.localtion = "index.html"
+  });
 });
