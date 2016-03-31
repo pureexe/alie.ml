@@ -125,6 +125,7 @@ if(thread_id){
   $.getJSON(apiServer+"/Threads?filter[where][from]="+me+"&filter[where][to]="+chatwith,function(response){
     if(response.length==0){
       $('#new-thread-modal').openModal({dismissible:false});
+      $("#show-who").show();
     }else{
       InitThread(response[0]);
     }
