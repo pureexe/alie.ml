@@ -1,0 +1,15 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mysqlDs": {
+    "host": "56fba1940c1e66310400016e-alie.rhcloud.com",
+    "port": 40751,
+    "database": "api",
+    "username": "adminnZvqJys",
+    "password": "AI-NTxkX1Uyb",
+    "name": "mysqlDs",
+    "connector": "mysql"
+  }
+}
